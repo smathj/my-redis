@@ -32,8 +32,8 @@ public class Main {
                 List<GeoRadiusResponse> radiusResponseList1 = jedis.geosearch("stores2:geo",
                         new GeoSearchParam()
                                 .fromLonLat(new GeoCoordinate(127.033, 37.495))
-                                .byRadius(500, GeoUnit.M)
-                                .withCoord()
+                                .byRadius(500, GeoUnit.M)   // 500 미터 반경
+                                .withCoord()    // 좌표도 가져오기
                 );
 
                 radiusResponseList1.forEach(response ->
